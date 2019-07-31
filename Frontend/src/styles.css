@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  background-image: url(https://images8.alphacoders.com/102/1024079.jpg);
+  background-image: url("./assets/img/background-border-brown-628241.jpg");
+  background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
