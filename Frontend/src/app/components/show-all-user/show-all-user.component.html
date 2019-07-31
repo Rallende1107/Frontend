@@ -1,0 +1,195 @@
+<div class="container">
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-dark mb-3 mt-4" data-toggle="modal" data-target="#agregarUsuario">
+   <fa-icon [icon]="iconAdd"></fa-icon>
+    Agregar Usuario
+  </button>
+  <button type="button" class="btn btn-dark mb-3 mt-4"  style="margin-left: 5rem" data-toggle="modal" data-target="#agregarCargo">
+   <fa-icon [icon]="iconAdd"></fa-icon>
+    Agregar Cargo
+  </button>
+
+  <div class="card text-white bg-dark">
+    <div class="card-header">
+      <h3> Listar Usuarios</h3>
+    </div>
+    <div class="card-body ">
+      <table class="table table-hover text-center text-white mbdTable">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Rut</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Cargo</th>
+            <th>Sucursal</th>
+            <th>Correo Electronico</th>
+            <th>Contraseña</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center">
+            <td>id</td>
+            <td>Rut</td>
+            <td>nombre</td>
+            <td>apellidos</td>
+            <td>cargo</td>
+            <td>sucursal</td>
+            <td>email</td>
+            <td>password</td>
+            <td>
+              <button class="btn btn-warning" (click)="usuarioEditar()">
+                <fa-icon [icon]="iconEdit" style="margin:5px"></fa-icon>Editar
+              </button>
+              <button class="btn btn-danger" style="margin-left: 10px">
+                <fa-icon [icon]="iconDelete" style="margin:5px"></fa-icon>Eliminar </button>
+
+            </td>
+          </tr>
+
+
+
+
+          <!-- <tr class="text-center" *ngFor="let usuario of Usuarios">
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.cargo}}</td>
+            <td>{{usuario.sucursal}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.password}}</td>
+            <td>
+              <button class="btn btn-warning" (click)="usuarioEditar()"> Editar</button>
+              <button class="btn btn-danger" >Eliminar </button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="agregarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #datosUsuario="ngForm" (ngSubmit)="agregar(datosUsuario.value)">
+          <div class="form-row">
+            <div class="form-group col-md-1" style="text-align: center">
+              <label>ID</label>
+              <input type="number" class="form-control" id="id" name="id" [(ngModel)]="id" placeholder="" disabled>
+            </div>
+            <div class="form-group col-md-4" style="text-align: center">
+              <label>Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Nombre"
+                minlength="2" required ngModel>
+            </div>
+
+            <div class="form-group col-md-4" style="text-align: center">
+              <label for="Apellidos">Apellidos</label>
+              <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="apellidos"
+                placeholder="Apellidos" ngModel>
+            </div>
+            <div class="form-group col-md-3" style="text-align: center">
+              <label>Rut</label>
+              <input type="text" class="form-control" id="Rut" name="rut" [(ngModel)]="rut" placeholder="111.111.111-1" ngModel>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Tipo de Usuario</label>
+              <select name="cargo" id="cargo" [(ngModel)]="cargo" class="form-control" ngModel>
+                <option>Administrador</option>
+                <option>Vendedor</option>
+                <option>Otro...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Sucursal</label>
+              <select name="sucursal" id="sucursal" [(ngModel)]="sucursal" class="form-control" ngModel>
+                <option>Sucursal 1</option>
+                <option>Sucursal 2</option>
+                <option>Sucursal 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Correo Electronico</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email"
+                placeholder="email@email.cl" ngModel>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Confirme Correo Electronico</label>
+              <input type="email" class="form-control" id="emailconfirmed" name="emailconfirmed"
+                [(ngModel)]="emailconfirmed" placeholder="email@email.cl" ngModel>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Contraseña</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+                placeholder="Contraseña" ngModel>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Confirme Contraseña</label>
+              <input type="password" class="form-control" id="passwordConfirmed" name="passwordConfirmed"
+                [(ngModel)]="passwordConfirmed" placeholder="Contraseña" ngModel>
+            </div>
+          </div>
+          <div class="centerBtn">
+            <input type="submit" class="btn btn-dark" id="agregar" (click)="validar()" value=" Agregar">
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Cargo -->
+<div class="modal fade" id="agregarCargo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Cargo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #datosUsuario="ngForm" (ngSubmit)="agregar(datosUsuario.value)">
+          <div class="form-row">
+            <div class="form-group col-md-5" style="text-align: center">
+              <label>Cargo</label>
+              <input type="text" class="form-control" id="nombreCargo" name="nombreCargo" [(ngModel)]="nombreCargo"
+                placeholder="Cargo" minlength="2" required ngModel>
+            </div>
+
+          </div>
+
+
+
+          <div class="centerBtn">
+            <input type="submit" class="btn btn-dark" id="agregarCargo" value="AgregarCargo">
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

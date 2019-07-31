@@ -1,0 +1,150 @@
+<div class="container"> 
+<div class="row justify-content-start">  
+  <div class="col-3"> 
+      <button type="button" class="btn btn-dark mb-1 mt-5" data-toggle="modal" data-target="#agregarProducto">
+          Agregar Sucursal
+      </button> 
+  </div>  
+  <div class="col-3">
+      <div class="dropdown mb-1 mt-5">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Busqueda por...
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" >Sucursal</a>
+            <a class="dropdown-item" >Nombre</a>
+            <a class="dropdown-item" >Region</a>
+            <a class="dropdown-item" >Comunas</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!-- <table class="table bg-white">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">N° Sucursal</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Comuna</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+            </tr>
+            <tr>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+            </tr>
+            <tr>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+            </tr>
+        </tbody>
+      </table> -->
+      <div class="card text-white bg-dark mb-5 text-center">
+          <div class="card-header">
+            <h3> Lista de Sucursales</h3>
+          </div>
+          <div class="card-body ">
+            <table class="table table-hover text-white">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Región</th>
+                  <th>Direccion</th>
+                  <th>nombre</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Id</td>
+                  <td>Región</td>
+                  <td>Dirección</td>
+                  <td>Nombre</td>
+                  <td>
+                    <button class="btn btn-warning"> Editar</button>
+                  </td>
+                  <td>
+                      <button class="btn btn-danger"> Eliminar </button>
+                  </td>
+                </tr>
+      
+                <!-- <tr class="text-center" *ngFor="let usuario of Usuarios">
+                  <td>{{usuario.id}}</td>
+                  <td>{{usuario.nombre}}</td>
+                  <td>{{usuario.apellidos}}</td>
+                  <td>{{usuario.email}}</td>
+                  <td>{{usuario.password}}</td>
+                  <td>
+                    <button class="btn btn-warning" > Editar</button>
+                    <button class="btn btn-danger">Eliminar </button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="agregarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar Sucursal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+            <form #datosSucural="ngForm" (ngSubmit)="agregarSucursal(datosSucural.value)">
+                <div class="form-row">
+       
+                  <div class="form-group col-md-6">
+                    <label for="IdSucursal">ID</label>
+                    <input type="number" class="form-control" id="inputID" name="inputID" placeholder="">
+                  </div>
+       
+                  <div class="form-group col-md-6">
+                    <label for="NombreSucursal">Nombre</label>
+                    <input type="text" class="form-control" id="NombreSucursal" name="NombreSucursal" placeholder="Nombre de sucursal" ngModel>
+                  </div>
+       
+                </div>
+                <div class="form-group">
+                  <label for="DireccionSucursal">Direccion de sucursal</label>
+                  <input type="text" class="form-control" id="DireccionSucursal" name="DireccionSucursal" placeholder="#Direccion" ngModel>
+                </div>
+                <div class="form-group">
+                  <label for="regionSucursal">Region</label>
+                  <input type="text" class="form-control" id="regionSucursal" name="regionSucursal" placeholder="Region" ngModel>
+                </div>
+                <div class="centerBtn">
+                  <input type="submit" class="btn btn-primary" value="Agregar">
+                </div>
+       
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- <button (click)="SucursalEditar()">edit</button> -->

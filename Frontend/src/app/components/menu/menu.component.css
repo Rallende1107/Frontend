@@ -1,0 +1,29 @@
+
+
+#imgCarrusel img{
+    height: 350px;
+}
+#imgCarrusel {
+
+    border-radius: 20px;
+}
+#titulo{
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#imgVendedores{
+    background: url("../../../assets/img/Vendedores.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 150px;
+}
+#imgReportes{
+    background: url("../../../assets/img/Reportes.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 150px;
+}
+#imgProductos{
+    background: url("../../../assets/img/Productos.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 150px;
+}

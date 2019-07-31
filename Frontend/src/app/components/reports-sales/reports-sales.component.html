@@ -1,0 +1,79 @@
+
+ <!-- Reporte de Ventas -->
+ <!-- estos botones tendrian que ir en una NavBar -->
+<div class="container-fluid">
+    
+
+    <div class="row justify-content-around">  
+      <div class="col-2">    
+          <div class="row align-items-beteewn">
+              <button class="btn btn-dark col-12 mt-4">ganancias</button>
+              <button class="btn btn-dark col-12 mt-3">ver sucursales </button>
+              <button class="btn btn-dark col-12 mt-3">registros</button> <!-- registros  -->
+              <button class="btn btn-dark col-12 mt-3">actualizar sucursal</button>
+              <button class="btn btn-dark col-12 mt-3">actualizar rango usuario</button>
+          </div> 
+      </div>   
+      <div class="col-9">   
+          <div class="row"> 
+               
+              <h3 class="text-white col-12 mt-1">Reporte de ventas</h3>
+              <div class="col-12 mb-3 mt-2"><div class="dropdown"> 
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Busqueda por...
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Sucursal</a>
+                    <a class="dropdown-item" href="#">Vendedor (A-Z)</a>
+                    <a class="dropdown-item" href="#">Rango de Fechas</a>
+                  </div>
+              </div> </div> 
+              <table class="table bg-dark table-hover text-white col-12">
+                                    <thead> 
+                                        <tr>
+                                            <th scope="col">N° Boleta</th>
+                                            <th scope="col"> Sucursal</th> <!-- mostrar y actualizar sucursal -->
+                                            <th scope="col">Vendedor</th> <!-- actualizar usuario -->
+                                            <th scope="col">Detalle</th> <!-- reporte ganancia -->
+                                            <th scope="col"> Ganancia </th> <!-- reporte ganancia -->
+                                            <th scope="col"> Fecha Vendida</th> <!-- reporte ganancia  -->
+                                            <th scope="col"> Editar</th>
+                                            <th scope="col"> Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td> 
+                                              <button class="btn btn-warning">editar</button>
+                                            </td>
+                                            <td>
+                                              <button class="btn btn-danger"> eliminar</button>
+                                            </td> 
+                                        </tr>
+      
+                                        <tr> 
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td> 
+                                              <button class="btn btn-warning">editar</button>
+                                            </td>
+                                            <td>
+                                              <button class="btn btn-danger"> eliminar</button>
+                                            </td> 
+                                        </tr>
+                                        
+                                    </tbody>
+              </table> 
+            </div>
+      </div>
+</div>

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-image: url(https://images8.alphacoders.com/102/1024079.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+.centerBtn {
+  display: flex;
+  justify-content: center;
+}

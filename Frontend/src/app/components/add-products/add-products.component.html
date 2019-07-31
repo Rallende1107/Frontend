@@ -1,0 +1,75 @@
+ <br>
+ <div class="container">
+   <div class="card text-white bg-dark">
+     <div class="card-header" text-align=center>
+       <h4>Agregar productos</h4>
+     </div>
+     <div class="card-body">
+       <form>
+         <div class="form-row">
+
+           <div class="form-group col-md-2">
+             <label for="IdProducto">ID</label>
+             <input type="number" class="form-control" id="Id" name="id" ([ngModel])="atributoProducto.id"
+               placeholder="0" disabled>
+           </div>
+
+           <div class="form-group col-md-5">
+             <label for="inputState">MARCAS</label>
+             <select class="form-control" id="Marca" name="MarcaProducto" [(ngModel)]="atributoProducto.marca">
+               <!--duda con el ngModel-->
+               <option selected>Seleccione...</option>
+               <option>samsung</option>
+               <option>Apple</option>
+               <option>Azumi</option>
+               <option>Huawei</option>
+               <option>LG</option>
+               <option>Sony</option>
+               <option>Asus</option>
+               <option>Alcatel</option>
+             </select>
+           </div>
+
+           <div class="form-group col-md-5">
+             <label for="Modelo">MODELO</label>
+             <input type="text" class="form-control" id="Modelo" name="Modelo" ([ngModel])="atributoProducto.modelo"
+               placeholder="modelo">
+           </div>
+
+           <div class="form-group col-2">
+             <label for="Color">Color</label>
+             <input type="text" class="form-control" id="Color" name="color" ([ngModel])="atributoProducto.color"
+               placeholder="Color">
+           </div>
+
+           <div class="form-group col-3">
+             <label for="inputState">Categoria</label>
+             <select class="form-control" id="Categoria" name="categoria" [(ngModel)]="atributoProducto.categoria">
+               <option selected>Seleccione...</option>
+               <option>Telefonos</option>
+               <option>Tablets</option>
+               <option>Accesorios</option>
+             </select>
+
+           </div>
+           <div class="form-group col-3">
+             <label for="stockProducto">Stock</label>
+             <input type="number" class="form-control" id="Stock" name="stock" [(ngModel)]="atributoProducto.stock" placeholder="0">
+           </div>
+
+           <div class="form-group col-3">
+             <label for="precio">Precio</label>
+             <input type="number" class="form-control" id="Precio" name="precio"
+               [(ngModel)]="atributoProducto.valorProducto" placeholder="0" min="0">
+           </div>
+
+         </div>
+
+         <div class="centerBtn">
+           <button type="submit" class="btn btn-primary" (click)="create">Agregar </button>
+         </div>
+
+       </form>
+     </div>
+   </div>
+ </div>

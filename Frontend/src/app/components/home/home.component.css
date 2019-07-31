@@ -1,0 +1,26 @@
+.navbar {
+  /* Foreste */
+  /* background-color: #1E592A; */
+/* Electric*/
+  /* background-color: #3CC47C; */
+/*Light */
+  background-color: #E9C893;
+  /*Tin #Tin #828081*/
+  /* background-color: #828081; */
+
+}
+
+.desplegable>div>a:hover {
+/* background-color: rgb(194, 19, 19); */
+background-color: rgb(141, 148, 99);
+}
+.nav-link:hover{
+/* background-color: rgb(70, 69, 69); */
+background-color: rgb(141, 148, 99);
+/* color: white! important; */
+}
+
+.dropdown-menu {
+
+  background-color: #E9C893;
+}
