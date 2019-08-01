@@ -64,17 +64,17 @@
                   <th>Id</th>
                   <th>Región</th>
                   <th>Direccion</th>
-                  <th>nombre</th>
+                  <th>Nombre</th>
                   <th>Editar</th>
                   <th>Eliminar</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Id</td>
-                  <td>Región</td>
-                  <td>Dirección</td>
-                  <td>Nombre</td>
+                <tr *ngFor="let sucursal of sucursales">
+                  <td>{{sucursal.id}}</td>
+                  <td>{{sucursal.region}}</td>
+                  <td>{{sucursal.direccion}}</td>
+                  <td>{{sucursal.nombre}}</td>
                   <td>
                     <button class="btn btn-warning"> Editar</button>
                   </td>
