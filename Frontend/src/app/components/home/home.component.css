@@ -22,5 +22,8 @@ background-color: rgb(141, 148, 99);
 
 .dropdown-menu {
 
-  background-color: rgb(255, 200, 111);
+  background-color:#DDA0DD;
+}
+.navbar{
+  background-color: #DDA0DD;
 }
