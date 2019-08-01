@@ -16,17 +16,28 @@ export class ShowAllProductsComponent implements OnInit {
   iconAdd = faPlusCircle;
   iconEdit = faEdit;
   iconDelete = faExclamationTriangle;
+  
+  producto :any= []; // seria igual que producto = producto[];?  estos datos se deberian mostrar en la datebase
 
-  productos: Producto[];
   constructor(private home: HomeComponent, private servicioProducto: ProductoService) { }
 
   ngOnInit() {
+    this.getProductos(); // se llama metodo que contiene el servicio
+
+  }
+  getProductos(){
+    this.servicioProducto.getProducto().subscribe(
+      (data)=>{
+        this.producto =data;
+      }
+    )
   }
   ProductoEditar() {
     this.home.router.navigate(["Productos/Modificar"], { relativeTo: this.home.route })
   }
 
   create(producto) {
+    
 
     /*hay que asegurarse de que producto sea bien enviado debido a que por ejemplo, como Marca
     esta enviando solo un string dejo un ejemplo*/

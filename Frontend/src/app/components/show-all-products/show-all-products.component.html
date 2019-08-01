@@ -45,14 +45,15 @@
                 <button class="btn btn-danger">Eliminar</button>
               </td>
             </tr> -->
-           <tr  class="text-center table-hover" >
-              <td>id</td>
-              <td>modelo</td>
-              <td>marca</td>
-              <td>color</td>
-              <td>categoria</td>
-              <td>precio</td>
-              <td>stock</td>
+           <tr  *ngFor="let Producto of producto" >
+             <!-- se agrega el producto.x para poder ustilizar estos datos desde los servicios-->
+              <td>{{producto.id}}</td>
+              <td>{{producto.modelo}}</td>
+              <td>{{producto.marca}}</td>
+              <td>{{producto.color}}</td>
+              <td>{{producto.categoria}}</td>
+              <td>{{producto.precio}}</td>
+              <td>{{producto.stock}}</td>
               <td>
                 <button class="btn btn-warning" (click)="ProductoEditar()">
                   <fa-icon [icon]="iconEdit" style="margin:5px"></fa-icon>Editar</button>
