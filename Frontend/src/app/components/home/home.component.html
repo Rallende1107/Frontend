@@ -11,32 +11,33 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link" (click)="Volver()">
-        <fa-icon [icon]="iconHome"></fa-icon> Home
+        <a class="nav-link" style="color:white;" (click)="Volver()">
+        <fa-icon style= "color:white;" [icon]="iconHome"></fa-icon> Home
           <span class="sr-only">(current)</span> </a>
       </li>
 
 
       <li class="nav-item dropdown desplegable">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle" style="color:white;" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <fa-icon [icon]="iconBarras"></fa-icon> Administración
+          <fa-icon style="color:white;" [icon]="iconBarras"></fa-icon> Administración
         </a>
 
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item " (click)="usuarios()">
-            <fa-icon [icon]="iconUsers"></fa-icon>Usuarios
+          <a class="dropdown-item " style="color:white;" (click)="usuarios()">
+            <fa-icon [icon]="iconUsers" style="color:white;" ></fa-icon>Usuarios
           </a>
-           <a class="dropdown-item " (click)="productos()">
-             <fa-icon [icon]="iconProductos"></fa-icon> Productos
+           <a class="dropdown-item " style="color:white;" (click)="productos()">
+             <fa-icon [icon]="iconProductos" style="color:white;" ></fa-icon> Productos
            </a>
 
-           <a class="dropdown-item " (click)="sucursales()">
-             <fa-icon [icon]="iconSucursales"></fa-icon> Sucursales
+           <a class="dropdown-item " style="color:white;" (click)="sucursales()">
+             <fa-icon [icon]="iconSucursales" style="color:white;" ></fa-icon> Sucursales
            </a>
         </div>
       </li>
 
+      
 <!--
       <li class="nav-item active">
          <a class="nav-link" (click)="usuarioListar()">
