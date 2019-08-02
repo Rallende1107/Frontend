@@ -1,13 +1,13 @@
 import { Cargo } from './Cargo';
-import { Sucursal } from './Sucursal';
+//import { Sucursal } from './Sucursal';
 
 export class Usuario {
   id: number;
   rut: string;
-  nombre: string
-  apellidos: string
-  password: string
-  email: string
-  cargo : Cargo
-  sucursal:Sucursal
+  nombre: string;
+  apellidos: string;
+  password: string;
+  email: string;
+  cargo : Cargo;
+  sucursal: string;
 }

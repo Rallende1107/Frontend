@@ -10,19 +10,20 @@ import { Usuario } from '../Modelo/Usuario';
 export class UsuarioService {
   usuario:Usuario[]; // usar el objeto persona 
   constructor(private http:HttpClient) { }
-  Url="http://localhost:8080/usuarios"; //ruta  para la conexion con el back
+  Url="http://localhost:8080/usuario"; //ruta  para la conexion con el back
 
   getUsuarios(){ //se obtienen los datos de la url
-    return this.http.get<Usuario[]>(this.Url+"/listar"); // será  necesaria la ruta ? 
+    return this.http.get<Usuario[]>(this.Url+"/usuarios"); // será  necesaria la ruta ? 
   }
   createUsuario(usuario:Usuario){ //creacion de un usuario
-    return this.http.post<Usuario>(this.Url+"/agregar",usuario).subscribe; // /crear es la ruta y los datos que va a recibir 
+    return this.http.post<Usuario>(this.Url+"/add",usuario).subscribe; // /crear es la ruta y los datos que va a recibir 
   }
   deleteUsuario(usuario:Usuario){
+    //return this.http.delete(this.Url+`/usuario/${id}`);
         return this.http.delete<Usuario>(this.Url+"/eliminar").subscribe;
   }
   updateUsuario(usuario:Usuario){
-      return this.http.put<Usuario>(this.Url+"/actualizar",usuario).subscribe;
+      return this.http.put<Usuario>(this.Url+"usuario",usuario).subscribe;
 
   }
   

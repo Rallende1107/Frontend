@@ -52,12 +52,13 @@ export class ShowAllProductsComponent implements OnInit {
   ProductoEditar() {
     this.home.router.navigate(["Productos/Modificar"], { relativeTo: this.home.route })
   }
-
+}
+/*
   create(producto) {
     
 
     /*hay que asegurarse de que producto sea bien enviado debido a que por ejemplo, como Marca
-    esta enviando solo un string dejo un ejemplo*/
+    esta enviando solo un string dejo un ejemplo
     producto.Marca = { nombre: "algo", marca: producto.Marca };
     console.log(producto);
 
@@ -68,4 +69,4 @@ export class ShowAllProductsComponent implements OnInit {
     // })
   }
 
-}
+*/

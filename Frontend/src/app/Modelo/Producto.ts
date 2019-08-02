@@ -1,20 +1,21 @@
 
 import{Marca} from '../Modelo/Marca';
 import { Categoria} from '../Modelo/Categoria';
-import { Precio } from "../Modelo/Precio";
+//import { Precio } from "../Modelo/Precio";
+import{Stock} from '../Modelo/Stock';
 export class Producto  {
     id: number;
     marca:Marca ;
     modelo: String
     color: String
     categoria:  Categoria
-    valorProducto:  Precio
-    stock : number;
-
+    valorProducto:  number;
+    //stock : number;
+    stock :Stock;
     constructor(){
       this.categoria = new Categoria();
       this.marca = new Marca();
-      this.valorProducto = new Precio();
+     this.stock = new Stock();
     }
 
   }

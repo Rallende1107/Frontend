@@ -19,9 +19,7 @@ import { ReportsBranchOfficeComponent } from './components/reports-branch-office
 import { ReportsSalesComponent } from './components/reports-sales/reports-sales.component';
 import { AddPositionComponent } from './components/add-position/add-position.component';
 import { MenuComponent } from './components/menu/menu.component';
-
-
-
+// se debe agregar algo ? 
 
 
 const routes: Routes = [
@@ -30,6 +28,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    //duda  sobre las rutas
     children: [
       { path: 'Productos/Agregar', component: AddProductsComponent },
       { path: 'Productos/Modificar', component: UpdateProductsComponent },
@@ -47,6 +46,26 @@ const routes: Routes = [
       { path: 'USuarios/Cargo', component : AddPositionComponent},
       { path: 'menu', component: MenuComponent}
     ]
+  /*  children: [
+      {path :'Producto/add',component:AddProductsComponent},
+      {path:'Producto/producto',component:UpdateProductsComponent},
+      {path:'Producto/productos',component:ShowAllProductsComponent},
+      //delete
+      {path :'Usuario/add',component:AddUserComponent},
+      {path:'Usuario/usuarios',component:UpdateUserComponent},
+      {path:'Usuario/usuarios',component:ShowAllUserComponent},
+      //delete
+      {path :'Cargo/add',component:AddUserComponent,
+      {path:'Cargo/cargos',component:UpdateUserComponent},
+      {path:'Cargo/cargos',component:ShowAllUserComponent},
+      //delete
+      {path :'Marca/add',component:AddProductsComponent},
+      {path:'Marca/marcas',component:UpdateProductsComponent},
+      {path:'Marca/marcas',component:ShowAllProductsComponent},
+      //delete
+      { path: 'menu', component: MenuComponent}
+    ]
+*/
   },
 
 
