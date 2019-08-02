@@ -16,11 +16,11 @@ export class MarcaService {
     return this.http.get<Marca[]>(this.Url+"/marcas"); // será  necesaria la ruta ? 
   }
   createMarca(marca:Marca){ //creacion de un usuario
-    return this.http.post<Marca>(this.Url+"/add",marca).subscribe; // /crear es la ruta y los datos que va a recibir 
+    return this.http.post<Marca>(this.Url+"/add",marca); // /crear es la ruta y los datos que va a recibir 
   }
-  deleteMarca(marca:Marca){
-      return this.http.delete<Marca>(this.Url+"/eliminar").subscribe;
-      //  return this.http.delete(this.Url+`/marca/${id}`);
+  deleteMarca(id:number){
+    //  return this.http.delete<Marca>(this.Url+"/eliminar").subscribe;
+       return this.http.delete(this.Url+`/marca/${id}`);
       }
   updateMarca(marca:Marca){
       return this.http.put<Marca>(this.Url+"/marca",marca).subscribe;
