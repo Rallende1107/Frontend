@@ -3,7 +3,9 @@ import { ServiceService } from '../../Service/service.service';
 import { Usuario } from 'src/app/Modelo/Usuario';
 import { HomeComponent} from '../home/home.component';
 import { faPlusCircle, faExclamationTriangle, faEdit } from '@fortawesome/free-solid-svg-icons';
-
+import{ Cargo}from 'src/app/Modelo/Cargo';
+import{CargoService} from 'src/app/Service/Cargo.service';
+import { UsuarioService } from 'src/app/Service/Usuario.service';
 
 @Component({
   selector: 'app-show-all-user',
@@ -15,21 +17,66 @@ export class ShowAllUserComponent implements OnInit {
   iconAdd = faPlusCircle;
   iconEdit = faEdit;
   iconDelete = faExclamationTriangle;
-
-  Usuarios:Usuario[];
-  constructor(private service:ServiceService,private home: HomeComponent) { }
+  cargo :any =[]; //duda de esto
+  usuario : any = [];
+  constructor(private service:ServiceService,private servicioUsuario :UsuarioService,private servicioCargo : CargoService,private home: HomeComponent) { }
 
   ngOnInit() {
-    //TIENEN QUE DESCOMENTAR ESTO
-    // this.service.getUsuarios()
-    // .subscribe(data=>{
-    //   this.Usuarios=data;
-    // }), ErrorEvent;
+    // solo necesito que muestre la lista de los usuarios, poreso no se llama al metodo get CARGO
+    this.getUsuario();
+    
   }
-
+  //SERVICIOS DE USUARIO
+    getUsuario(){
+      this.servicioUsuario.getUsuarios().subscribe(
+        (data)=>{
+          this.usuario=data;
+        }
+      )
+    }
+    createUsuario(usuario:Usuario){
+      this.servicioUsuario.createUsuario(usuario).subscribe(data=>{
+        console.log(data)
+      },err=>{
+        console.log(err)
+      })
+    }
+    deleteUsuario(id:number){
+      this.servicioUsuario.deleteUsuario(id).subscribe(
+        data=>{
+          console.log(data)
+        },err =>{
+          console.log(err)
+        })
+    }
   usuarioEditar() {
     this.home.router.navigate(['Usuarios/Modificar'], { relativeTo: this.home.route });
   }
+
+  //SERVICIOS CARGO
+    getCargo(){
+      this.servicioCargo.getCargos().subscribe(
+        (data)=>{
+          this.cargo=data;
+        } )
+    }
+    createCargo(cargo:Cargo){
+      this.servicioCargo.createCargo(cargo).subscribe(
+        data=>{
+          console.log(data)
+        },err =>{
+          console.log(err)
+        } )
+    }
+    deleteCargo(id:number){
+      this.servicioCargo.deleteCargo(id).subscribe(
+        data =>{
+          console.log(data)
+        },err =>{
+          console.log(err)
+        })
+    }
+
 
   agregar(usuario) {
     console.log(usuario);

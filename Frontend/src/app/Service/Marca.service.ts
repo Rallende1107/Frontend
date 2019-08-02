@@ -19,11 +19,11 @@ export class MarcaService {
     return this.http.post<Marca>(this.Url+"/add",marca); // /crear es la ruta y los datos que va a recibir 
   }
   deleteMarca(id:number){
-    //  return this.http.delete<Marca>(this.Url+"/eliminar").subscribe;
-       return this.http.delete(this.Url+`/marca/${id}`);
-      }
+       // return this.http.delete<Cargo>(this.Url+"/cargo").subscribe;
+        return this.http.delete(this.Url+`/marca/${id}`);
+  }
   updateMarca(marca:Marca){
-      return this.http.put<Marca>(this.Url+"/marca",marca).subscribe;
+      return this.http.put<Marca>(this.Url+"/marca",marca);
 
   }
   

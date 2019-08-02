@@ -16,11 +16,11 @@ export class CategoriaService {
     return this.http.get<Categoria[]>(this.Url+"/categorias"); // será  necesaria la ruta ? 
   }
   createCategoria(categoria:Categoria){ 
-    return this.http.post<Categoria>(this.Url+"/add",categoria).subscribe; // /crear es la ruta y los datos que va a recibir 
+    return this.http.post<Categoria>(this.Url+"/add",categoria); // /crear es la ruta y los datos que va a recibir 
   }
-  deleteCategoria(categoria:Categoria){
-        return this.http.delete<Categoria>(this.Url+"/eliminar").subscribe;
-       // return this.http.delete(this.Url+`/categoria/${id}`);
+  deleteCategoria(id:number){
+       // return this.http.delete<Categoria>(this.Url+"/eliminar").subscribe;
+        return this.http.delete(this.Url+`/categoria/${id}`);
       }
   updateProducto(categoria:Categoria){
       return this.http.put<Categoria>(this.Url+"/categoria",this.categoria).subscribe;

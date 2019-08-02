@@ -16,12 +16,12 @@ export class StockService {
     return this.http.get<Stock[]>(this.Url+"/allstock"); // será  necesaria la ruta ? 
   }
   createStock(stock:Stock){ //creacion de un usuario
-    return this.http.post<Stock>(this.Url+"/add",stock).subscribe; // /crear es la ruta y los datos que va a recibir 
+    return this.http.post<Stock>(this.Url+"/add",stock); // /crear es la ruta y los datos que va a recibir 
   }
-  deleteStock(stock:Stock){
-    return this.http.delete<Stock>(this.Url+"/stock").subscribe;
+  deleteStock(id :number){
+   // return this.http.delete<Stock>(this.Url+"/stock").subscribe;
         
-//        return this.http.delete(this.Url+`/stock/${id}`);//ver tema del any
+     return this.http.delete(this.Url+`/stock/${id}`);//ver tema del any
   }
   updateStock(stock:Stock){
       return this.http.put<Stock>(this.Url+"/stock",stock).subscribe;
