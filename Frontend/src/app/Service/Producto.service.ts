@@ -19,8 +19,8 @@ export class ProductoService {
   createProducto(producto:Producto){ //creacion de un usuario
     return this.http.post<Producto>(this.Url+"/Agregar",producto); // /crear es la ruta y los datos que va a recibir 
   }
-  deleteProducto(producto:Producto){
-        return this.http.delete<Producto>(this.Url+"/eliminar");
+  deleteProducto(id:number){
+        return this.http.delete(this.Url+`/eliminar/${id}`);
   }
   updateProducto(producto:Producto){
       return this.http.put<Producto>(this.Url+"/actualizar",producto);

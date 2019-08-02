@@ -46,7 +46,7 @@
               </td>
             </tr> -->
            <tr  *ngFor="let Producto of producto" >
-             <!-- se agrega el producto.x para poder ustilizar estos datos desde los servicios-->
+             <!-- se agrega el producto.x para poder ustilizar estos datos desde los servicios GET-->
               <td>{{producto.id}}</td>
               <td>{{producto.modelo}}</td>
               <td>{{producto.marca}}</td>
@@ -55,11 +55,11 @@
               <td>{{producto.precio}}</td>
               <td>{{producto.stock}}</td>
               <td>
+                <!--click service put,delete-->
                 <button class="btn btn-warning" (click)="ProductoEditar()">
                   <fa-icon [icon]="iconEdit" style="margin:5px"></fa-icon>Editar</button>
-                <button class="btn btn-danger" style="margin-left:1rem">
-                  <fa-icon [icon]="iconDelete" style="margin:5px"></fa-icon>Eliminar
-                </button>
+                <button class="btn btn-danger" style="margin-left:1rem"(click)="deleteProducto(producto.id)" >
+                  <fa-icon [icon]="iconDelete" style="margin:5px"></fa-icon>Eliminar </button>
               </td>
             </tr>
           </tbody>
@@ -75,17 +75,21 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <!-- Donde esta la funcion que envia ? -->
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
+        <!--create(datosProducto.value)-->
+        <!-- Esta bien, yep -->
         <form #datosProducto="ngForm" (ngSubmit)="create(datosProducto.value)">
           <div class="form-row">
-
+            <!-- No es asi ya que tienes esto,eso abrevia todos los atributos osea solo usas el ngmodel ahora
+            Ten en cuenta que debe tener el mismo nombre de la propiedad de producto-->
+            <!-- No es necesario,piensa que el datosProducto ya esta definido, es como agregarselo nomas -->
             <div class="form-group col-md-2">
               <label for="IdProducto">ID</label>
-              <input type="number" class="form-control" id="Id" name="id"
+              <input type="number" class="form-control" id="id" name="id" ngModel
                 placeholder="0" disabled>
             </div>
 
@@ -94,8 +98,8 @@
               <select class="form-control" id="Marca" name="Marca"  ngModel>
                 <!--duda con el ngModel-->
                 <option selected>Seleccione...</option>
-                <option>samsung</option>
-                <option>Apple</option>
+                <option name="Marca">samsung</option>
+                <option name="Marca">Apple</option>
                 <option>Azumi</option>
                 <option>Huawei</option>
                 <option>LG</option>
@@ -163,12 +167,14 @@
       </div>
       <div class="modal-body">
 
-        <form #datosProducto="ngForm" (ngSubmit)="create(datosProducto.value)">
+        <!-- No es necesario, la funcion submit en si mandara los datos, por ende no es necesario poner la funcion
+        no escuche -->
+        <form #datosProducto="ngForm"  (ngSubmit)="createProducto(datosProducto.value)">
           <div class="form-row">
 
             <div class="form-group col-md-2">
               <label for="IdProducto">ID</label>
-              <input type="number" class="form-control" id="Id" name="id" placeholder="0" disabled>
+              <input type="number" class="form-control" id="Id" name="id" placeholder="0" ngModel disabled>
             </div>
 
             <div class="form-group col-md-5">

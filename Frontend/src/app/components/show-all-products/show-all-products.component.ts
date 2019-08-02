@@ -32,6 +32,23 @@ export class ShowAllProductsComponent implements OnInit {
       }
     )
   }
+  createProducto(producto : Producto){
+    this.servicioProducto.createProducto(producto).subscribe(data=>{
+      console.log(data)
+    },err=>{
+      console.log(err)
+    })
+
+  }
+  deleteProducto(id:number){
+   //agregar alerta de c
+    this.servicioProducto.deleteProducto(id).subscribe(
+      data => {
+        console.log(data)
+      },err =>{
+        console.log(err)
+      })
+  }
   ProductoEditar() {
     this.home.router.navigate(["Productos/Modificar"], { relativeTo: this.home.route })
   }
