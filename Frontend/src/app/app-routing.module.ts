@@ -1,3 +1,5 @@
+// Edicion Rene Allende
+
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -19,7 +21,7 @@ import { ReportsBranchOfficeComponent } from './components/reports-branch-office
 import { ReportsSalesComponent } from './components/reports-sales/reports-sales.component';
 import { AddPositionComponent } from './components/add-position/add-position.component';
 import { MenuComponent } from './components/menu/menu.component';
-// se debe agregar algo ? 
+// se debe agregar algo ?
 
 
 const routes: Routes = [

@@ -1,3 +1,10 @@
+<!-- autores
+  Rene Allende : creacion componente, diseño base
+  Eliana rodrigez : creacion de formulario
+  Matias Correa: Creacion Tablas
+    Joselyn Pino : implementacion de servicios
+-->
+
 <div class="container">
 
   <!-- Button trigger modal -->
@@ -30,20 +37,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="text-center">
-            <td>{{id}}</td>
-            <td>{{Rut}}</td>
-            <td>{{nombre}}</td>
-            <td>{{apellidos}}</td>
-            <td>{{cargo}}</td>
-            <td>{{sucursal}}</td>
-            <td>{{email}}</td>
-            <td>{{password}}</td>
+          <tr class="text-center" *ngFor="let Usuario of usuario">
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.Rut}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.cargo}}</td>
+            <td>{{usuario.sucursal}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.password}}</td>
             <td>
               <button class="btn btn-warning" (click)="usuarioEditar()">
                 <fa-icon [icon]="iconEdit" style="margin:5px"></fa-icon>Editar
               </button>
-              <button class="btn btn-danger" style="margin-left: 10px">
+              <button class="btn btn-danger" style="margin-left: 10px" (click)="deleteUsuario(usuario.id)">
                 <fa-icon [icon]="iconDelete" style="margin:5px"></fa-icon>Eliminar </button>
 
             </td>
@@ -85,7 +92,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #datosUsuario="ngForm" (ngSubmit)="agregar(datosUsuario.value)">
+        <form #datosUsuario="ngForm" (ngSubmit)="createUsuario(datosUsuario.value)">
           <div class="form-row">
             <div class="form-group col-md-1" style="text-align: center">
               <label>ID</label>
@@ -151,8 +158,7 @@
             </div>
           </div>
           <div class="centerBtn">
-            <input type="submit" class="btn btn-dark" id="agregar" (click)="validar()" value=" Agregar">
-
+            <input type="submit" class="btn btn-dark" id="agregar" (click)="createUsuario()" value=" Agregar">
           </div>
         </form>
       </div>
@@ -172,7 +178,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #datosUsuario="ngForm" (ngSubmit)="agregar(datosUsuario.value)">
+        <form #datosCargo="ngForm" (ngSubmit)="createCargo(datosCargo.value)">
           <div class="form-row">
             <div class="form-group col-md-5" style="text-align: center">
               <label>Cargo</label>
@@ -184,10 +190,9 @@
 
 
 
-          <div class="centerBtn">
-            <input type="submit" class="btn btn-dark" id="agregarCargo" value="AgregarCargo">
-
-          </div>
+         <div class="centerBtn">
+           <input type="submit" class="btn btn-dark" id="agregar" (click)="createCargo()" value=" Agregar">
+         </div>
         </form>
       </div>
     </div>

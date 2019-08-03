@@ -1,4 +1,6 @@
-
+// Autores
+// Rene Allende: creacion componente
+// Joselyn Pino: creacion de clases
 import{Marca} from '../Modelo/Marca';
 import { Categoria} from '../Modelo/Categoria';
 //import { Precio } from "../Modelo/Precio";

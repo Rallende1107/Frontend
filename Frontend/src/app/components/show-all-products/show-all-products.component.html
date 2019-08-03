@@ -1,3 +1,9 @@
+<!-- autores
+  Rene Allende : creacion componente, diseño base
+  Evelin cerda : creacion de formulario
+  Matias Correa: Creacion Tablas
+  Joselyn Pino : implementacion de servicios
+-->
 <div class="container">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-dark mb-3 mt-4" data-toggle="modal" data-target="#agregarProducto">
@@ -12,7 +18,6 @@
       <fa-icon [icon]="iconAdd"></fa-icon>
       Agregar Categoria
     </button>
-
     <div class="card bg-dark text-center text-light">
       <div class="card-header ">
         <h3>Productos</h3>
@@ -67,7 +72,6 @@
       </div>
     </div>
   </div>
-
   <!-- Modal -->
 <div class="modal fade" id="agregarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -82,7 +86,7 @@
       <div class="modal-body">
         <!--create(datosProducto.value)-->
         <!-- Esta bien, yep -->
-        <form #datosProducto="ngForm" (ngSubmit)="create(datosProducto.value)">
+        <form #datosProducto="ngForm" (ngSubmit)="createProducto(datosProducto.value)">
           <div class="form-row">
             <!-- No es asi ya que tienes esto,eso abrevia todos los atributos osea solo usas el ngmodel ahora
             Ten en cuenta que debe tener el mismo nombre de la propiedad de producto-->
@@ -92,7 +96,6 @@
               <input type="number" class="form-control" id="id" name="id" ngModel
                 placeholder="0" disabled>
             </div>
-
             <div class="form-group col-md-5">
               <label for="inputState">MARCAS</label>
               <select class="form-control" id="Marca" name="Marca"  ngModel>
@@ -108,19 +111,16 @@
                 <option>Alcatel</option>
               </select>
             </div>
-
             <div class="form-group col-md-5">
               <label for="Modelo">MODELO</label>
               <input type="text" class="form-control" id="Modelo" name="modelo"
                 placeholder="modelo" ngModel>
             </div>
-
             <div class="form-group col-2">
               <label for="Color">Color</label>
               <input type="text" class="form-control" id="Color" name="color"
                 placeholder="Color" ngModel>
             </div>
-
             <div class="form-group col-3">
               <label for="inputState">Categoria</label>
               <select class="form-control" id="Categoria" name="categoria"  ngModel>
@@ -129,25 +129,19 @@
                 <option>Tablets</option>
                 <option>Accesorios</option>
               </select>
-
             </div>
             <div class="form-group col-3">
               <label for="stockProducto">Stock</label>
-              <input type="number" class="form-control" id="Stock" name="stock"  placeholder="0" ngModel>
+              <input type="number" class="form-control" id="Stock" name="stock" placeholder="0" ngModel min="0" max="1000">
             </div>
-
             <div class="form-group col-3">
               <label for="precio">Precio</label>
-              <input type="number" class="form-control" id="Precio" name="precio"
-                 placeholder="0" min="0" ngModel>
+              <input type="number" class="form-control" id="Precio" name="precio" placeholder="0" min="100000" ngModel>
             </div>
-
           </div>
-
           <div class="centerBtn">
             <input type="submit" class="btn btn-primary" value="Agregar">
           </div>
-
         </form>
       </div>
     </div>
@@ -169,7 +163,7 @@
 
         <!-- No es necesario, la funcion submit en si mandara los datos, por ende no es necesario poner la funcion
         no escuche -->
-        <form #datosProducto="ngForm"  (ngSubmit)="createProducto(datosProducto.value)">
+        <form #datosMarca="ngForm"  (ngSubmit)="createMarca(datosMarca.value)">
           <div class="form-row">
 
             <div class="form-group col-md-2">
@@ -185,7 +179,7 @@
           </div>
 
           <div class="centerBtn">
-            <input type="submit" class="btn btn-primary" value="Agregar">
+            <input type="submit" class="btn btn-dark" id="agregar" (click)="createMarca()" value=" Agregar">
           </div>
 
         </form>
@@ -209,7 +203,7 @@
       </div>
       <div class="modal-body">
 
-        <form #datosProducto="ngForm" (ngSubmit)="create(datosProducto.value)">
+        <form #datoscategoria="ngForm" (ngSubmit)="createCategoria(datoscategoria.value)">
           <div class="form-row">
 
             <div class="form-group ">
@@ -221,7 +215,7 @@
 
 
           <div class="centerBtn">
-            <input type="submit" class="btn btn-primary" value="Agregar">
+            <input type="submit" class="btn btn-dark" id="agregar" (click)="createCategoria()" value=" Agregar">
           </div>
 
         </form>

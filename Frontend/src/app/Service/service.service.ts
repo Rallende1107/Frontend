@@ -1,8 +1,9 @@
+// Autores: Joselyn Pino
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../Modelo/Usuario';
 
- 
+
 @Injectable({
   providedIn: 'root'
 })
