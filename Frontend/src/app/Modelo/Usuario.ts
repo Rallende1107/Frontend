@@ -1,8 +1,7 @@
 // Autores
 // Rene Allende: creacion componente
 // Joselyn Pino: creacion de clasesimport { Cargo } from './Cargo';
-//import { Sucursal } from './Sucursal';
-
+import {Cargo} from '../Modelo/Cargo';
 export class Usuario {
   id: number;
   rut: string;
@@ -10,6 +9,6 @@ export class Usuario {
   apellidos: string;
   password: string;
   email: string;
-  cargo : Cargo;
+  cargo: Cargo;
   sucursal: string;
 }

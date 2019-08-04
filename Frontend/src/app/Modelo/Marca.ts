@@ -2,6 +2,8 @@
 // Rene Allende: creacion componente
 // Joselyn Pino: creacion de clases
 export class Marca  {
+    // tslint:disable-next-line: variable-name
     id: number;
-    marca:String;
+    // tslint:disable-next-line: variable-name ban-types
+    nombreMarca: String;
   }

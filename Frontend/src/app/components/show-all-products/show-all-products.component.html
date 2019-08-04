@@ -32,33 +32,18 @@
               <th>COLOR</th>
               <th>CATEGORIA</th>
               <th>PRECIO</th>
-              <th>STOCK</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <!-- <tr class="text-center" *ngFor="let producto of productos">
-              <td>{{producto.id}}</td>
-              <td>{{producto.modelo}}</td>
-              <td>{{producto.marca}}</td>
-              <td>{{producto.color}}</td>
-              <td>{{producto.categoria}}</td>
-              <td>{{producto.precio}}</td>
-              <td>{{producto.stock}}</td>
-              <td>
-                <button class="btn btn-warning" (click)="ProductoEditar()"> Editar</button>
-                <button class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr> -->
-           <tr  *ngFor="let Producto of producto" >
+           <tr  *ngFor="let producto of lstProductos" >
              <!-- se agrega el producto.x para poder ustilizar estos datos desde los servicios GET-->
               <td>{{producto.id}}</td>
               <td>{{producto.modelo}}</td>
-              <td>{{producto.marca}}</td>
+              <td>{{producto.marca.nombreMarca}}</td>
               <td>{{producto.color}}</td>
-              <td>{{producto.categoria}}</td>
+              <td>{{producto.categoria.nombreCategoria}}</td>
               <td>{{producto.precio}}</td>
-              <td>{{producto.stock}}</td>
               <td>
                 <!--click service put,delete-->
                 <button class="btn btn-warning" (click)="ProductoEditar()">
@@ -98,23 +83,14 @@
             </div>
             <div class="form-group col-md-5">
               <label for="inputState">MARCAS</label>
-              <select class="form-control" id="Marca" name="Marca"  ngModel>
+              <select class="form-control" id="Marca" name="Marca">
                 <!--duda con el ngModel-->
-                <option selected>Seleccione...</option>
-                <option name="Marca">samsung</option>
-                <option name="Marca">Apple</option>
-                <option>Azumi</option>
-                <option>Huawei</option>
-                <option>LG</option>
-                <option>Sony</option>
-                <option>Asus</option>
-                <option>Alcatel</option>
+                <option *ngFor="let marca of lstMarcas" [value]="marca.id">{{marca.nombreMarca}}</option>
               </select>
             </div>
             <div class="form-group col-md-5">
               <label for="Modelo">MODELO</label>
-              <input type="text" class="form-control" id="Modelo" name="modelo"
-                placeholder="modelo" ngModel>
+              <input type="text" class="form-control" id="Modelo" name="modelo" placeholder="modelo" ngModel>
             </div>
             <div class="form-group col-2">
               <label for="Color">Color</label>
@@ -123,16 +99,9 @@
             </div>
             <div class="form-group col-3">
               <label for="inputState">Categoria</label>
-              <select class="form-control" id="Categoria" name="categoria"  ngModel>
-                <option selected>Seleccione...</option>
-                <option>Telefonos</option>
-                <option>Tablets</option>
-                <option>Accesorios</option>
+              <select class="form-control" id="Categoria" name="categoria">
+                <option *ngFor="let categoria of lstCategorias" [value]="categoria.id">{{categoria.nombreCategoria}}</option>
               </select>
-            </div>
-            <div class="form-group col-3">
-              <label for="stockProducto">Stock</label>
-              <input type="number" class="form-control" id="Stock" name="stock" placeholder="0" ngModel min="0" max="1000">
             </div>
             <div class="form-group col-3">
               <label for="precio">Precio</label>
@@ -173,7 +142,7 @@
 
             <div class="form-group col-md-5">
               <label for="Marca">Marca</label>
-              <input type="text" class="form-control" id="Marca" name="Marca" placeholder="Marca" ngModel>
+              <input type="text" class="form-control" id="Marca" name="nombreMarca" placeholder="Marca" ngModel>
             </div>
 
           </div>
@@ -208,16 +177,12 @@
 
             <div class="form-group ">
               <label for="categoria">Categoria</label>
-              <input type="text" class="form-control" id="categoria" name="categoria" placeholder="categoria" ngModel>
+              <input type="text" class="form-control" id="categoria" name="nombreCategoria" placeholder="categoria" ngModel>
             </div>
-
-            </div>
-
-
+          </div>
           <div class="centerBtn">
             <input type="submit" class="btn btn-dark" id="agregar" (click)="createCategoria()" value=" Agregar">
           </div>
-
         </form>
       </div>
     </div>
