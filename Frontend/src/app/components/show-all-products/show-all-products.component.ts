@@ -22,6 +22,7 @@ export class ShowAllProductsComponent implements OnInit {
   lstProductos: Producto[]; // seria igual que producto = producto[];?  estos datos se deberian mostrar en la datebase
   lstMarcas: Marca[];
   lstCategorias: Categoria[];
+  categoria: Categoria;
   // tslint:disable-next-line: max-line-length
   constructor( private home: HomeComponent, private servicioProducto: ProductoService, private servicioMarca: MarcaService, private servicioCategoria: CategoriaService, private servicioStock: StockService){
 
@@ -92,7 +93,7 @@ export class ShowAllProductsComponent implements OnInit {
     createCategoria(categoria: Categoria) {
       this.servicioCategoria.createCategoria(categoria).subscribe(
         data => {
-        console.log(data);
+          this.categoria = data;
       }, err => {
         console.log(err);
       });
