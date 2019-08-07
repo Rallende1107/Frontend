@@ -11,7 +11,7 @@ export class Producto  {
   // tslint:disable-next-line: ban-types
   color: String;
   categoria: Categoria;
-  precio: number;
+  precioVenta: number;
   cantidadMax: number;
   cantidadMin: number;
   constructor() {

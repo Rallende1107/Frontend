@@ -23,7 +23,7 @@ export class MarcaService {
   }
   deleteMarca(id: number) {
        // return this.http.delete<Cargo>(this.Url+"/cargo").subscribe;
-        return this.http.delete(this.Url + '/marca/${id}');
+    return this.http.delete(this.Url + `/marca/${id}`);
   }
   updateMarca(marca: Marca){
       return this.http.put<Marca>(this.Url + '/marca', marca);

@@ -8,7 +8,7 @@ import { Categoria} from 'src/app/Modelo/Categoria';
 import { MarcaService} from 'src/app/Service/Marca.service';
 import { CategoriaService } from 'src/app/Service/Categoria.service';
 import { StockService} from 'src/app/Service/Stock.service';
-
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-show-all-products',
   templateUrl: './show-all-products.component.html',
@@ -24,7 +24,7 @@ export class ShowAllProductsComponent implements OnInit {
   lstCategorias: Categoria[];
   categoria: Categoria;
   // tslint:disable-next-line: max-line-length
-  constructor( private home: HomeComponent, private servicioProducto: ProductoService, private servicioMarca: MarcaService, private servicioCategoria: CategoriaService, private servicioStock: StockService){
+  constructor(public router: Router, public route: ActivatedRoute,  private home: HomeComponent, private servicioProducto: ProductoService, private servicioMarca: MarcaService, private servicioCategoria: CategoriaService, private servicioStock: StockService){
 
    }
 
@@ -107,5 +107,12 @@ export class ShowAllProductsComponent implements OnInit {
         }
       );
     }
+
+  nel() {
+    this.home.router.navigate(['Marcas'], { relativeTo: this.home.route });
+  }
+  nel2() {
+    this.home.router.navigate(['cate'], { relativeTo: this.home.route });
+  }
 }
 
